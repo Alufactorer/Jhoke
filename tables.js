@@ -278,14 +278,17 @@ class saveBucket{
 
     /**
      * 
+     * @typedef Query
+     * @property {string} hello
+     *
+     *
+     *
+     *
+     * @params {Query} query
+     * @params {{string | undefined}} perurl
      * 
-     * 
-     * @param {query} query 
-     * 
-     * @returns {saveBucket}
-     */
-
-    query(query, perurl=false){
+     */ 
+    query(query, perurl){
        
 
                 return (async () => {
@@ -354,6 +357,6 @@ module.exports = {
     saveBucket
 }
 
-
+const buck = new saveBucket("asdlkfjs")
 
 
