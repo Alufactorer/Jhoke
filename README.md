@@ -1,5 +1,4 @@
 # JHOKEDB
----
 
 ## Funny slow and stupid.
 
@@ -9,5 +8,4 @@ This is a side project built to save data using *The Textsaver* while still havi
 
 
 # Documentation
----
 In building.
