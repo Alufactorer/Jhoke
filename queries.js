@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 
 function getIndicesOf(searchStr, str) {
     var searchStrLen = searchStr.length;
@@ -14,52 +12,10 @@ function getIndicesOf(searchStr, str) {
     return indices;
 }
 
-const megaternary = (object, possiblekeys, routes) => {
-    let keys = Object.keys(object)
-    let ret = routes[routes.length - 1];
-
-    if(possiblekeys.length == 0){return ret}
-
-    for(let i = 0; i < keys.length; i++){
-        if(object[possiblekeys[i]]){
-            ret = routes[i]
-        }
-    }
-
-    return ret
-}
-
-const p = path.join(__dirname, "save.txt")
 
 
-/* * @typedef where 
- * @property {string[]} [$has]
- * 
- * @typedef update
- * @property {string[]} [$deleteKeys]
- * @property {bool} [$upsert]
- * @property {bool} [$delete]
- *
- *
- * @typedef query 
- * @property {where} where
- * @property {update} update 
- *
- * @typedef queryresult
- * @property {object[]} found
- * @property {object[]} updated
- *
- *
- *
- * @param {query} query
- * @param {string} data
- *
- *
- *
- *
- * @returns {queryresult}
- *
- */
+
+
 
 
 
@@ -192,5 +148,4 @@ let query = {
 module.exports = {
     Query
 }
-
 
