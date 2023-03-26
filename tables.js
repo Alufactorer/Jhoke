@@ -279,13 +279,13 @@ class saveBucket{
     /**
      * 
      * @typedef Query
-     * @property {string} hello
+     * @property {{$has : string[] | undefined, members : any}} where
+     * @property {{$delete: boolean | undefined, $deleteKeys: string[], $upsert: boolean | members:any}} update
      *
+    *
      *
-     *
-     *
-     * @params {Query} query
-     * @params {{string | undefined}} perurl
+     * @param {Query} query 
+     * @param {{string | undefined}} perurl
      * 
      */ 
     query(query, perurl){
@@ -358,5 +358,8 @@ module.exports = {
 }
 
 const buck = new saveBucket("asdlkfjs")
+    .query({
+       up 
 
+    })
 
