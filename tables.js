@@ -40,15 +40,15 @@ class saveBucket{
 
     /**
      * 
-     * @param {string} uid 
-     * @param {saveBucket | null} value 
-     * @param {object} optional 
+     * @param {string | undefined} uid 
+     * @param {saveBucket | undefined} value 
+     * @param {object | undefined} optional 
      * 
      * 
      * return saveBucket
      */
 
-    constructor(uid, value, optional){
+    constructor(uid, value = undefined, optional = undefined){
         this.defaultUrl = (process.argv[2] === "dev") ? "http://localhost:3000" : "https://bucketstore.onrender.com"
         if(process.argv[2] === "dev") console.log("dev")
         this.value = value;
@@ -278,17 +278,16 @@ class saveBucket{
 
     /**
      * 
-     * @typedef Query
-     * @property {{$has : string[] | undefined, members : any}} where
-     * @property {{$delete: boolean | undefined, $deleteKeys: string[], $upsert: boolean | members:any}} update
+     * @typedef query 
+     * @property {{id:string, [some]:any}} where
+     * @property {{$upsert: boolean | undefined}} update
      *
-    *
-     *
-     * @param {Query} query 
-     * @param {{string | undefined}} perurl
+     * @param {query} query 
      * 
-     */ 
-    query(query, perurl){
+     * @returns {saveBucket}
+     */
+
+    query(query, perurl=false){
        
 
                 return (async () => {
@@ -309,14 +308,11 @@ class saveBucket{
                                 data = ""
                             } else {
 
-                                data =  await axios.get(data.data).then(res => res.data.split(`<div id="viewPost">`)[1].split(`</div>`)[0].trim().replace("<br />", ""))
+                                data = await axios.get(data.data).then(res => res.data.split(`<div id="viewPost">`)[1].split(`</div>`)[0].trim().replace("<br />", ""))
                             }
+                        console.log(data)
                             data = Query(query, data)
-
-                            if(data.wholedata == "") 
-                        {    return "error"
-                            }
-
+                            
 
                         
 
@@ -352,14 +348,12 @@ class saveBucket{
 
 
 }
-module.exports = {
 
+
+
+
+module.exports = {
     saveBucket
 }
 
-const buck = new saveBucket("asdlkfjs")
-    .query({
-       up 
-
-    })
 
