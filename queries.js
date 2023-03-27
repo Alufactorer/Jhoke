@@ -21,7 +21,6 @@ function getIndicesOf(searchStr, str) {
 
 
 
-
 const Query = (Query, data) => {
 let query = {
     where:{
