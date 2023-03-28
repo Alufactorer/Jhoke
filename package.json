@@ -5,7 +5,7 @@
   },
   "name": "jhokedb",
   "description": "This is a side project built to save data using *The Textsaver* while still having at least some query functionality.",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "types.js",
   "devDependencies": {},
   "scripts": {
